@@ -21,6 +21,7 @@ func main() {
 	}
 	defer file.Close()
 
+	// NewReader関数の引数には読み込みたいファイル情報を指定
 	r := csv.NewReader(file)
 	for {
 		// 一行ずつ読み込み

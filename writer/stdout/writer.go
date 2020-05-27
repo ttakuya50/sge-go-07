@@ -13,6 +13,7 @@ func _main() {
 		{"佐藤", "21歳", "ケーキ"},
 	}
 
+	// NewWriter関数を使用している.引数は出力先を指定している
 	w := csv.NewWriter(os.Stdout)
 	for _, r := range records {
 		// Writeメソッドでバッファに溜め込む

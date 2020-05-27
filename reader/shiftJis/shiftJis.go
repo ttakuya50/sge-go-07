@@ -25,6 +25,7 @@ func main() {
 	defer file.Close()
 
 	r := csv.NewReader(transform.NewReader(file, japanese.ShiftJIS.NewDecoder()))
+	//r := csv.NewReader(file)
 	for {
 		// 一行ずつ読み込み
 		record, err := r.Read()
