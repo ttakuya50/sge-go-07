@@ -21,8 +21,10 @@ func main() {
 
 	// 出力先を作成したファイルに指定
 	w := csv.NewWriter(file)
+
 	w.Comma = '|'    // 区切り文字を変更
 	w.UseCRLF = true // 改行文字を CRLF(\r\n) にする
+
 	for _, r := range records {
 		if err := w.Write(r); err != nil {
 			log.Fatal(err)

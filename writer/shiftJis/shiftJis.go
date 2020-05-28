@@ -23,7 +23,9 @@ func main() {
 	}
 
 	// transform,japaneseを使用しShiftJIS変換
-	w := csv.NewWriter(transform.NewWriter(file, japanese.ShiftJIS.NewEncoder()))
+	writer := transform.NewWriter(file, japanese.ShiftJIS.NewEncoder())
+	w := csv.NewWriter(writer)
+
 	for _, r := range records {
 		if err := w.Write(r); err != nil {
 			log.Fatal(err)
